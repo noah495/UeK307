@@ -31,6 +31,7 @@ import {MatInputModule} from "@angular/material/input";
     MatGridListModule,
     HttpClientModule,
     MatInputModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
