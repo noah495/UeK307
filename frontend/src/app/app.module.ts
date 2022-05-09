@@ -8,11 +8,14 @@ import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
+import { TicketFormComponent } from './ticket-form/ticket-form.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
     AppComponent,
-    TicketComponent
+    TicketComponent,
+    TicketFormComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatCardModule,
     MatIconModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

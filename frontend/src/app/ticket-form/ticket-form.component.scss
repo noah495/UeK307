@@ -1,0 +1,25 @@
+.formular-form {
+  zoom: 150%;
+  display: flex;
+  justify-content: space-around;
+}
+h1 {
+  text-align: center;
+}
+.button {
+  zoom: 150%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+.buttonCancel {
+  margin-right: 10px;
+}
+input {
+  height: 30px;
+  width: 200px;
+}
+select {
+  height: 35px;
+  width: 210px;
+}
