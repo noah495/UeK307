@@ -1,37 +1,99 @@
-<h1>New Ticket</h1>
-<form class="formular-form">
-  <div class="form-wrapper">
-    <mat-label>Firstname</mat-label>
-    <br>
-    <input matInput placeholder="Max">
-    <br><br>
-    <mat-label>Lastname</mat-label>
-    <br>
-    <input matInput placeholder="Mustermann">
-    <br><br>
-    <mat-label>EMail</mat-label>
-    <br>
-    <input matInput placeholder="test@gmail.com">
-    <br><br>
-    <mat-label>Phone Nr.</mat-label>
-    <br>
-    <input matInput placeholder="0793333333">
-    <br><br>
-    <mat-label>Bonus</mat-label>
-    <br>
-    <input matInput placeholder="10%">
-    <br><br>
-    <mat-label>Concert</mat-label>
-    <br>
-    <select matNativeControl required>
-      <option value="Select a concert">Select a concert</option>
-      <option value="TestTest">Test Test</option>
-      <option value="TestTest2">Test Test2</option>
-    </select>
-  </div>
-</form>
+<mat-stepper>
+  <mat-step>
+    <ng-template matStepLabel> Create Ticket</ng-template>
 
-<div class="button">
-  <button mat-raised-button class="buttonCancel" style="background-color: #ff3b3b">Cancel</button>
-  <button mat-raised-button style="background-color: forestgreen">Save</button>
-</div>
+    <div class="form-wrapper">
+      <div class="sameLine">
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input matInput required [(ngModel)]="firstName">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input matInput required [(ngModel)]="lastName">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </p>
+      </div>
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Email</mat-label>
+          <input matInput required [(ngModel)]="email">
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+      </p>
+      <!-- TODO: PhoneNr is required (fix!!) else throws error...? -->
+      <p>
+        <mat-form-field appearance="standard">
+          <mat-label>Phone Nr.</mat-label>
+          <input matInput required [(ngModel)]="phoneNr">
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+      </p>
+      <div class="sameLine">
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label [(ngModel)]="concertName">Concert</mat-label>
+            <mat-select>
+              <mat-option value="concert1">Concert 1</mat-option>
+              <mat-option value="concert2">Concert 2</mat-option>
+              <mat-option value="concert3">Concert 3</mat-option>
+              <mat-option value="concert4">Concert 4</mat-option>
+              <mat-option value="concert5">Concert 5</mat-option>
+              <mat-option value="concert6">Concert 6</mat-option>
+              <mat-option value="concert7">Concert 7</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>festival</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-label style="alignment: top">Bonus</mat-label>
+        </p>
+        <div>
+          <mat-slider
+            class="example-margin"
+            [max]=15
+            [min]=0
+            [step]=5
+            thumbLabel
+            [displayWith]="formatLabel"
+            aria-label="units">
+          </mat-slider>
+          <mat-icon matSuffix>percent</mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <!-- TODO: Validation before matStepperNext (https://material.angular.io/components/stepper/overview) -->
+
+    <div class="buttons">
+      <button mat-raised-button style="background-color: #ff3b3b; margin-right: 20px; width: 40%" [routerLink]="'/'">
+        Cancel
+      </button>
+      <button mat-raised-button style="background-color: forestgreen; width: 40%" matStepperNext>Save</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel> Create Ticket</ng-template>
+    <h1 style="text-align: center">Preview</h1>
+    <app-ticket *ngFor="let ticket of ticketDraft" [ticket]="ticket">
+    </app-ticket>
+
+    <!-- TODO: push to db on button click plus ticket text not showing -->
+    <div class="buttons">
+      <button mat-raised-button style="background-color: #ff3b3b; margin-right: 20px; width: 40%" matStepperPrevious>
+        Edit
+      </button>
+      <button mat-raised-button style="background-color: forestgreen; width: 40%" [routerLink]="'/'">Create Ticket
+      </button>
+    </div>
+  </mat-step>
+
+
+</mat-stepper>
+
+

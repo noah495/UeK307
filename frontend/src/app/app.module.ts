@@ -15,6 +15,11 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {MatSelectModule} from "@angular/material/select";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatFormFieldControl, MatFormFieldModule} from "@angular/material/form-field";
+import {MatStepperModule} from "@angular/material/stepper";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,7 +40,13 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     MatGridListModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatStepperModule,
+    FormsModule,
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,19 +1,18 @@
-.formular-form {
-  zoom: 150%;
+.form-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-h1 {
-  text-align: center;
-}
-.button {
-  zoom: 150%;
+
+.buttons {
+  width: 20%;
   position: fixed;
   right: 20px;
   bottom: 20px;
 }
 .buttonCancel {
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 mat-label {
@@ -27,4 +26,30 @@ input {
 select {
   height: 35px;
   width: 210px;
+}
+
+.mat-select-panel {
+  max-height: 200px !important;
+}
+.mat-select-value .mat-select-arrow {
+  color: white;
+}
+.mat-select-arrow {
+  color: white;
+}
+.mat-slider-thumb {
+  background-color: white !important;
+}
+.mat-slider-track-background {
+  background-color: white !important;
+}
+.mat-slider-thumb-label {
+  background-color: #6b6b6b !important;
+}
+mat-stepper {
+  background-color: #212121 !important;
+
+}
+.mat-step-label {
+  color: white !important;
 }

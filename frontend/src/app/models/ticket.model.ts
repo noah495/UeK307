@@ -5,6 +5,5 @@ export interface Ticket{
    lastName: string;
    email: string;
    phoneNr: string;
-   price: number;
    status: "paid" | "pending" | "late";
 }
