@@ -1,6 +1,5 @@
-
 import {Ticket} from "../../models/ticket.model";
-import {errorMessages, getEmptyFieldMessage} from "../../errrors/error-messages";
+import {errorMessages, getEmptyFieldMessage} from "../../errors/error-messages";
 
 export class ValidationService {
 
@@ -9,6 +8,7 @@ export class ValidationService {
         if (!this.validateStringNotEmpty(ticket.firstName)) errors.push(getEmptyFieldMessage('First Name'));
         if (!this.validateStringNotEmpty(ticket.lastName)) errors.push(getEmptyFieldMessage('Last Name'));
         if (!this.validateStringNotEmpty(ticket.email)) errors.push(getEmptyFieldMessage('Email'));
+        if (!this.validateStringNotEmpty(ticket.status)) errors.push(getEmptyFieldMessage('Status'));
         if (!this.validateEmail(ticket.email)) errors.push(errorMessages.emailInvalid);
         if (ticket.phone) {
             if (!this.validatePhoneNumber(ticket.phone)) errors.push(errorMessages.phoneInvalid)

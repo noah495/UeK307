@@ -6,5 +6,5 @@ export interface Ticket {
     concertId: number;
     status: string;
     timeLeft: string;
-    purchaseDate: Date;
+    purchaseDate?: Date;
 }
