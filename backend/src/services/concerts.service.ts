@@ -12,11 +12,20 @@ export class ConcertsService {
     }
 
     public getAllConcerts(): Promise<Concert[]> {
-        return new Promise<Concert[]>((resolve => {
+        return new Promise<Concert[]>(resolve => {
             this.connection.query("SELECT * FROM concerts", (err, data) => {
                 if (err) resolve(null);
                 resolve(data as Concert[]);
             })
-        }));
+        });
+    }
+
+    public getConcertById(id: string): Promise<Concert> {
+        return new Promise<Concert>(resolve => {
+            this.connection.query("SELECT * FROM concerts WHERE id = ?", [id], (err, data) => {
+                if (err) resolve(null);
+                resolve(data[0] as Concert);
+            })
+        })
     }
 }

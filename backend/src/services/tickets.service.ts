@@ -2,6 +2,7 @@ import {Injectable} from "@nestjs/common";
 import {Ticket} from "../models/ticket.model";
 import {DbConnectionService} from "./db-connection.service";
 import {Connection} from "mysql2";
+import {errorMessages, getEmptyFieldMessage} from "../errrors/error-messages";
 
 
 @Injectable()
@@ -43,9 +44,5 @@ export class TicketsService {
                     resolve(true);
                 });
         })
-    }
-
-    public validateTicket(): string[] {
-        return ['abc'];
     }
 }

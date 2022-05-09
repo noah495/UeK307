@@ -5,4 +5,6 @@ export interface Ticket {
     phone: string;
     concertId: number;
     status: string;
+    timeLeft: string;
+    purchaseDate: Date;
 }

@@ -1,6 +1,7 @@
 import {Body, Controller, Get, HttpStatus, Param, Post, Res} from "@nestjs/common";
 import {Ticket} from "../models/ticket.model";
 import {TicketsService} from "../services/tickets.service";
+import {ValidationService} from "../services/static/validation-service";
 
 @Controller('tickets')
 export class TicketsController {
@@ -10,7 +11,7 @@ export class TicketsController {
 
     @Post('insert')
     public async insertTicket(@Body() body: Ticket, @Res() res) {
-        const errors: string[] = this.ticketsService.validateTicket();
+        const errors: string[] = ValidationService.validateTicket(body);
         if (errors.length > 0) {
             res.status(HttpStatus.BAD_REQUEST);
             res.send({errors: errors})
