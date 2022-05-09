@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:fe": "cd frontend && npm run start",
-    "start:be": "cd backend && npm run start"
+    "start:be": "cd backend && npm run start",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,7 @@
   "bugs": {
     "url": "https://github.com/noah495/UeK307/issues"
   },
-  "homepage": "https://github.com/noah495/UeK307#readme"
+  "homepage": "https://github.com/noah495/UeK307#readme",
+  "dependencies": {
+  }
 }

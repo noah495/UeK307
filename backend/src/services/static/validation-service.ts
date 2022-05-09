@@ -21,9 +21,10 @@ export class ValidationService {
     }
 
     private static validatePhoneNumber(phoneNr: string): boolean {
-        for (let char of phoneNr)
-            if (!/^\d+$/.test(char) || char === ' ' || char === '+')
+        for (let char of phoneNr) {
+            if (isNaN(Number(char)) && char !== ' ' && char !== '+')
                 return false;
+        }
         return true;
     }
 
