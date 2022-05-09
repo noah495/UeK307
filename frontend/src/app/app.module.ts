@@ -14,6 +14,7 @@ import {ConcertService} from "./serivces/concert.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { TicketFormComponent } from './ticket-form/ticket-form.component';
 import {MatInputModule} from "@angular/material/input";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import {MatInputModule} from "@angular/material/input";
     HttpClientModule,
     MatInputModule,
     MatGridListModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
