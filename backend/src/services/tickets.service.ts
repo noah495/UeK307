@@ -15,7 +15,7 @@ export class TicketsService {
         return new Promise<boolean>(resolve => {
             this.connection.query(
                 "INSERT INTO sales (firstName, lastName, email, phoneNr, concertId, status, timeLeft, purchaseDate) VALUES (?,?,?,?,?,?,?, NOW())",
-                [ticket.firstName, ticket.lastName, ticket.email, ticket.phone, ticket.concertId, ticket.status, ticket.timeLeft],
+                [ticket.firstName, ticket.lastName, ticket.email, ticket.phoneNr, ticket.concertId, ticket.status, ticket.timeLeft],
                 (err) => {
                     if (err) resolve(false);
                     resolve(true);
