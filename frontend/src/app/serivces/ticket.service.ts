@@ -28,7 +28,13 @@ export class TicketService {
     })
   }
 
-  updateTicket(id: string) {
-    
+  updateTicket(id: string, ticket: Ticket): Promise<boolean | string[]> {
+    return new Promise<boolean | string[]>(resolve => {
+      this.http.post(`${this.baseUrl}/tickets/update/${id}`, ticket).subscribe(response => {
+        resolve(response as boolean);
+      }, error => {
+        resolve(error.error.errors);
+      })
+    })
   }
 }

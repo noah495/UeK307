@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {Ticket} from "../models/ticket.model";
 import {TicketService} from "../serivces/ticket.service";
 import {Concert} from "../models/concert.model";
@@ -6,6 +6,7 @@ import {ConcertService} from "../serivces/concert.service";
 import {MatStepper} from "@angular/material/stepper";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {TicketComponent} from "../ticket/ticket.component";
+import {SnackbarService} from "../serivces/snackbar.service";
 
 @Component({
   selector: 'app-ticket-form',
@@ -24,7 +25,7 @@ export class TicketFormComponent {
   public concerts: Concert[] = null;
   public ticket: Ticket = null;
 
-  constructor(private ticketService: TicketService, private concertService: ConcertService, private snackBar: MatSnackBar) {
+  constructor(private ticketService: TicketService, private concertService: ConcertService, private snackbarService: SnackbarService) {
     this.concertService.fetchAllConcerts().then(res => {
       this.concerts = res;
       this.assignChosenConcert();
@@ -48,7 +49,7 @@ export class TicketFormComponent {
           stepper.next();
         })
       } else {
-        this.showErrorSnackbar(res);
+        this.snackbarService.showErrorSnackbar(res);
       }
     })
   }
@@ -68,14 +69,5 @@ export class TicketFormComponent {
 
   public assignChosenConcert() {
     this.chosenConcert = Number(this.choice) === 0 ? null : this.concerts.find(concert => concert.id === Number(this.choice));
-  }
-
-  private showErrorSnackbar(errors: string[]) {
-    let errorString: string = '';
-    errors.forEach(err => errorString += err + '\n')
-    this.snackBar.open(errorString, '' ,{
-      duration: 2000,
-      panelClass: ['error-snackbar']
-    });
   }
 }

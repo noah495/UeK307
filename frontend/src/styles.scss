@@ -11,3 +11,9 @@ body{
 html {
   overflow-x: hidden;
 }
+
+.error-snackbar {
+  color: white;
+  background-color: red;
+  white-space: pre-wrap;
+}
