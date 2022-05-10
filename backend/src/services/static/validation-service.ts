@@ -17,7 +17,7 @@ export class ValidationService {
     }
 
     private static validateStringNotEmpty(value: string): boolean {
-        return value.length >= 2;
+        return value.length >= 1
     }
 
     private static validatePhoneNumber(phoneNr: string): boolean {

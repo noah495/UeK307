@@ -73,7 +73,7 @@ export class TicketFormComponent {
     let errorString: string = '';
     errors.forEach(err => errorString += err + '\n')
     this.snackBar.open(errorString, '' ,{
-      duration: 200000,
+      duration: 2000,
       panelClass: ['error-snackbar']
     });
   }
