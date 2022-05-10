@@ -6,8 +6,8 @@
       </div>
       <div class="content__time-left">
         <p class="icon" *ngIf="!isEditing">
-          <span *ngIf="ticket.status === 'pending'">⏳</span>
-          <span *ngIf="ticket.status === 'late'">⌛</span>
+          <span *ngIf="ticket && ticket.status === 'pending'">⏳</span>
+          <span *ngIf="ticket && ticket.status === 'late'">⌛</span>
         </p>
         <div class="time-left-edit icon icon-editing" *ngIf="isEditing">
           <mat-label class="state-label">State</mat-label>
@@ -53,8 +53,6 @@
           (value)="ticketUpdated.phoneNr = $event"
           title="Phone Nr."
           value="{{ticket ? ticket.phoneNr : ''}}"></app-ticket-info-field>
-
-        {{ticket.lastName}}
       </div>
       <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing" *ngIf="!isEditing">
