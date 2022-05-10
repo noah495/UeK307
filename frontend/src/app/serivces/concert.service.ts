@@ -16,4 +16,13 @@ export class ConcertService {
       })
     })
   }
+
+  public getConcertById(id: number): Promise<Concert> {
+    return new Promise<Concert>(resolve => {
+      this.http.get(`${this.baseUrl}/concerts/${id}`).subscribe(response => {
+        resolve(response as Concert);
+      })
+    })
+  }
 }
+

@@ -7,15 +7,13 @@ import {TicketService} from "../serivces/ticket.service";
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent {
   public tickets: Ticket[] = [];
   constructor(public ticketService: TicketService) {
     this.fetchTickets();
   }
 
-  private async fetchTickets(): Promise<void> {
+  private async fetchTickets() {
      this.tickets = await this.ticketService.fetchTickets()
-  }
-  ngOnInit(): void {
   }
 }

@@ -5,6 +5,7 @@ import {Concert} from "../models/concert.model";
 import {ConcertService} from "../serivces/concert.service";
 import {MatStepper} from "@angular/material/stepper";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {TicketComponent} from "../ticket/ticket.component";
 
 @Component({
   selector: 'app-ticket-form',
@@ -30,7 +31,7 @@ export class TicketFormComponent {
     })
   }
 
-  public saveTicket(stepper: MatStepper) {
+  public saveTicket(stepper: MatStepper, ticketComponent: TicketComponent) {
     this.ticketService.createTicket({
       firstName: this.firstName,
       lastName: this.lastName,
@@ -43,12 +44,12 @@ export class TicketFormComponent {
       if (typeof res === 'boolean') {
         this.ticketService.fetchTickets().then(tickets => {
           this.ticket = tickets.find(ticket => this.firstName === ticket.firstName && this.lastName === ticket.lastName && this.email === ticket.email);
+          ticketComponent.setConcertName(this.ticket.concertId);
           stepper.next();
         })
       } else {
         this.showErrorSnackbar(res);
-      };
-      console.log(res);
+      }
     })
   }
 

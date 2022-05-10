@@ -135,9 +135,20 @@ mat-stepper {
 }
 
 .mat-horizontal-stepper-header {
-  //pointer-events: none;
+  pointer-events: none;
 }
 
 .mat-stepper-horizontal-line {
   border-top-color: rgba(255, 255, 255, .5);
+}
+
+.cancel-button {
+  background-color: #ff3b3b;
+  margin-right: 20px;
+  width: 40%;
+}
+
+.save-button {
+  background-color: forestgreen;
+  width: 40%;
 }

@@ -55,17 +55,17 @@
     </div>
 
     <div class="buttons">
-      <button mat-raised-button style="background-color: #ff3b3b; margin-right: 20px; width: 40%" [routerLink]="'/'">
+      <button mat-raised-button class="cancel-button" [routerLink]="'/'">
         Cancel
       </button>
-      <button mat-raised-button style="background-color: forestgreen; width: 40%"  (click)="saveTicket(stepper)">Save</button>
+      <button mat-raised-button class="save-button" (click)="saveTicket(stepper, ticketComponent)">Save</button>
     </div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel> Ticket Preview</ng-template>
     <h1 style="text-align: center">Ticket Preview</h1>
     <div class="ticket-wrapper">
-      <app-ticket [ticket]="ticket" class="ticket">
+      <app-ticket [ticket]="ticket" class="ticket" #ticketComponent>
       </app-ticket>
     </div>
     <!-- TODO: push to db on button click plus ticket text not showing -->

@@ -2,18 +2,59 @@
   <div class="content">
     <div class="content__top-bar">
       <div class="content__title">
-        <p>CONCERT NAME</p>
+        <p class="concert-title">{{concertName ? concertName : ''}}</p>
       </div>
       <div class="content__time-left">
-        <p class="icon">⏳</p>
+        <p class="icon" *ngIf="!isEditing">
+          <span *ngIf="ticket.status === 'pending'">⏳</span>
+          <span *ngIf="ticket.status === 'late'">⌛</span>
+        </p>
+        <div class="time-left-edit icon icon-editing" *ngIf="isEditing">
+          <mat-label class="state-label">State</mat-label>
+          <select required class="state-select" [value]="ticketUpdated.status">
+            <option value="paid" (select)="updateNewStatus($event)">paid</option>
+            <option value="pending" (select)="updateNewStatus($event)">pending</option>
+            <option value="late" (select)="updateNewStatus($event)">late</option>
+          </select>
+        </div>
+
       </div>
     </div>
     <div class="content__bottom-wrapper">
       <div class="content__info">
-        <app-ticket-info-field [is-editing]="isEditing" title="First name" value="{{ticket ? ticket.firstName : ''}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Last name" value="{{ticket ? ticket.lastName : ''}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Email" value="{{ticket ? ticket.email : ''}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket ? ticket.phoneNr : ''}}"></app-ticket-info-field>
+        <app-ticket-info-field
+          [is-editing]="isEditing"
+          [required]="true"
+          [value]="ticket ? ticket.firstName : ''"
+          (value)="ticketUpdated.firstName = $event"
+          title="First name"
+          value="{{ticket ? ticket.firstName : ''}}"></app-ticket-info-field>
+
+        <app-ticket-info-field
+          [is-editing]="isEditing"
+          [required]="true"
+          [value]="ticket ? ticket.lastName : ''"
+          (value)="ticketUpdated.lastName = $event"
+          title="Last name"
+          value="{{ticket ? ticket.lastName : ''}}"></app-ticket-info-field>
+
+        <app-ticket-info-field
+          [is-editing]="isEditing"
+          [required]="true"
+          [value]="ticket ? ticket.email : ''"
+          (value)="ticketUpdated.email = $event"
+          title="Email"
+          value="{{ticket ? ticket.email : ''}}"></app-ticket-info-field>
+
+        <app-ticket-info-field
+          [is-editing]="isEditing"
+          [required]="false"
+          [value]="ticket ? ticket.phoneNr : ''"
+          (value)="ticketUpdated.phoneNr = $event"
+          title="Phone Nr."
+          value="{{ticket ? ticket.phoneNr : ''}}"></app-ticket-info-field>
+
+        {{ticket.lastName}}
       </div>
       <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing" *ngIf="!isEditing">
@@ -23,7 +64,7 @@
           <button mat-raised-button class="buttons__discard" [routerLink]="'/'" (click)="isEditing = false">
             Discard
           </button>
-          <button mat-raised-button class="buttons__save">Save</button>
+          <button mat-raised-button class="buttons__save" (click)="saveUpdatedTicket()">Save</button>
         </div>
       </div>
     </div>
