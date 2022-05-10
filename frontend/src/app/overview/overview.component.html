@@ -1,3 +1,6 @@
+<div class="title-wrapper">
+  <h1>Tickets</h1>
+</div>
 <div class="no-tickets-wrapper">
   <div *ngIf="tickets.length === 0">
     <p class="">There are no existing tickets.</p>
@@ -5,9 +8,6 @@
       <button mat-raised-button [routerLink]="'/create'">Create Ticket</button>
     </div>
   </div>
-</div>
-<div class="title-wrapper" *ngIf="tickets.length > 0">
-  <h1>Tickets</h1>
 </div>
 <app-ticket *ngFor="let ticket of tickets" [ticket]="ticket">
 
