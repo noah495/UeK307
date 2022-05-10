@@ -10,10 +10,10 @@
     </div>
     <div class="content__bottom-wrapper">
       <div class="content__info">
-        <app-ticket-info-field [is-editing]="isEditing" title="First name" value="{{ticket.firstName}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Last name" value="{{ticket.lastName}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Email" value="{{ticket.email}}"></app-ticket-info-field>
-        <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket.phoneNr}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="First name" value="{{ticket ? ticket.firstName : ''}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="Last name" value="{{ticket ? ticket.lastName : ''}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="Email" value="{{ticket ? ticket.email : ''}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket ? ticket.phoneNr : ''}}"></app-ticket-info-field>
       </div>
       <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing" *ngIf="!isEditing">

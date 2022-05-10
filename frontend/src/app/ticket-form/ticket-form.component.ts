@@ -21,6 +21,7 @@ export class TicketFormComponent {
   public bonus: string = '0'
   public concerts: Concert[] = null;
   public errors: string[] = [];
+  public ticket: Ticket = null;
 
   constructor(private ticketService: TicketService, private concertService: ConcertService) {
     this.concertService.fetchAllConcerts().then(res => {
@@ -39,8 +40,13 @@ export class TicketFormComponent {
       status: 'pending',
       timeLeft: this.calculateTimeToPay()
     }).then(res => {
-      if (typeof res === 'boolean') stepper.next();
-      else this.errors = res;
+      if (typeof res === 'boolean') {
+        this.ticketService.fetchTickets().then(tickets => {
+          this.ticket = tickets.find(ticket => this.firstName === ticket.firstName && this.lastName === ticket.lastName && this.email === ticket.email);
+          stepper.next();
+        })
+        stepper.next()
+      } else this.errors = res;
       console.log(res);
     })
   }
@@ -58,7 +64,7 @@ export class TicketFormComponent {
     }
   }
 
-  assignChosenConcert() {
+  public assignChosenConcert() {
     this.chosenConcert = Number(this.choice) === 0 ? null : this.concerts.find(concert => concert.id === Number(this.choice));
   }
 }

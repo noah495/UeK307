@@ -7,3 +7,22 @@
 mat-icon {
   color: #212121;
 }
+
+.no-tickets-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+
+.create-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
