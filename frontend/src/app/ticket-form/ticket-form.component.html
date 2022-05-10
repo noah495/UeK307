@@ -4,28 +4,28 @@
     <h1 style="text-align: center">Create Ticket</h1>
     <div class="form-wrapper">
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field id="firstname" appearance="outline">
           <mat-label>First Name</mat-label>
           <input matInput required [(ngModel)]="firstName">
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
       </p>
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field id="lastname" appearance="outline">
           <mat-label>Last Name</mat-label>
           <input matInput required [(ngModel)]="lastName">
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
       </p>
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field id="email" appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput required [(ngModel)]="email">
           <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
       </p>
       <p>
-        <mat-form-field appearance="outline">
+        <mat-form-field id="phonenr" appearance="outline">
           <mat-label>Phone Nr.</mat-label>
           <input matInput [required]="false" [(ngModel)]="phoneNr">
           <mat-icon matSuffix>phone</mat-icon>

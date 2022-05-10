@@ -73,6 +73,7 @@ select {
 
 mat-stepper {
   background-color: #212121 !important;
+
 }
 
 .mat-step-label {
@@ -106,6 +107,7 @@ mat-stepper {
 }
 
 .mat-horizontal-content-container, .mat-horizontal-stepper-content {
+  height: 100vh;
   padding: 0 !important;
 }
 

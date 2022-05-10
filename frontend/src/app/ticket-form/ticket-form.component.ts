@@ -5,6 +5,7 @@ import {Concert} from "../models/concert.model";
 import {ConcertService} from "../serivces/concert.service";
 import {MatStepper} from "@angular/material/stepper";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {style} from "@angular/animations";
 
 @Component({
   selector: 'app-ticket-form',
@@ -21,6 +22,7 @@ export class TicketFormComponent {
   public email: string = '';
   public bonus: string = '0'
   public concerts: Concert[] = null;
+  public errors: string[] = [];
   public ticket: Ticket = null;
 
   constructor(private ticketService: TicketService, private concertService: ConcertService, private snackBar: MatSnackBar) {
@@ -45,9 +47,8 @@ export class TicketFormComponent {
           this.ticket = tickets.find(ticket => this.firstName === ticket.firstName && this.lastName === ticket.lastName && this.email === ticket.email);
           stepper.next();
         })
-      } else {
-        this.showErrorSnackbar(res);
-      };
+        stepper.next()
+      } else this.errors = res;
       console.log(res);
     })
   }
