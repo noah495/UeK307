@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column
 }
 
 .buttons {
@@ -11,6 +11,7 @@
   right: 20px;
   bottom: 20px;
 }
+
 .buttonCancel {
   margin-right: 30px;
 }
@@ -18,6 +19,7 @@
 mat-label {
   color: white;
 }
+
 input {
   height: 30px;
   width: 200px;
@@ -31,28 +33,40 @@ select {
 .mat-select-panel {
   max-height: 200px !important;
 }
+
 .mat-select-value .mat-select-arrow {
   color: white;
 }
+
 .mat-select-arrow {
   color: white;
 }
+
 .mat-slider-thumb {
   background-color: white !important;
 }
+
 .mat-slider-track-background {
   background-color: white !important;
 }
+
 .mat-slider-thumb-label {
   background-color: #6b6b6b !important;
 }
+
 mat-stepper {
   background-color: #212121 !important;
 
 }
+
 .mat-step-label {
   color: white !important;
 }
+
 .mat-select-min-line {
   color: white !important;
+}
+
+.mat-radio-button {
+  margin-left: 15px;
 }

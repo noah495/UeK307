@@ -51,20 +51,17 @@
           </mat-form-field>
         </p>
         <p>
-          <mat-label style="alignment: top">Bonus</mat-label>
+          <mat-form-field appearance="fill">
+            <mat-label>Bonus</mat-label>
+            <mat-select>
+              <mat-option value="Bonus0">0</mat-option>
+              <mat-option value="Bonus5">5</mat-option>
+              <mat-option value="Bonus10">10</mat-option>
+              <mat-option value="Bonus15">15</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>percent</mat-icon>
+          </mat-form-field>
         </p>
-        <div>
-          <mat-slider
-            class="example-margin"
-            [max]=15
-            [min]=0
-            [step]=5
-            thumbLabel
-            [displayWith]="formatLabel"
-            aria-label="units">
-          </mat-slider>
-          <mat-icon matSuffix>percent</mat-icon>
-        </div>
       </div>
     </div>
 
