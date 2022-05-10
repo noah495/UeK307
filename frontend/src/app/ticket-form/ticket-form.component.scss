@@ -9,7 +9,6 @@ mat-form-field {
   width: 500px;
 }
 
-
 .mat-form-field-outline {
   height: 60px;
 }
@@ -142,4 +141,16 @@ mat-stepper {
 
 .mat-stepper-horizontal-line {
   border-top-color: rgba(255, 255, 255, .5);
+}
+
+.confirm-button-div {
+  width: 10%;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.confirm-button {
+  width: 100%;
 }
