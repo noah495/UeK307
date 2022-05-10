@@ -5,16 +5,14 @@
 </div>
 
 <div class="no-tickets-wrapper">
-  <div *ngIf="tickets.length === 0">
+  <div *ngIf="tickets.length === 0 && !spinnerService.isLoading">
     <p class="">There are no existing tickets.</p>
     <div class="create-button-wrapper">
       <button mat-raised-button [routerLink]="'/create'">Create Ticket</button>
     </div>
   </div>
 </div>
-<div class="title-wrapper">
-  <h1>Tickets</h1>
-</div>
+
 <app-ticket *ngFor="let ticket of tickets" [ticket]="ticket">
 
 </app-ticket>

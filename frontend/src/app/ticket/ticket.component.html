@@ -20,7 +20,7 @@
           <mat-icon>edit</mat-icon>
         </button>
         <div *ngIf="isEditing" class="buttons">
-          <button mat-raised-button class="buttons__discard" [routerLink]="'/'" (click)="isEditing = false">
+          <button mat-raised-button class="buttons__discard" (click)="isEditing = false">
             Discard
           </button>
           <button mat-raised-button class="buttons__save">Save</button>

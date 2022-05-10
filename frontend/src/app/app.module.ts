@@ -49,6 +49,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     MatFormFieldModule,
     MatStepperModule,
     FormsModule,
+    MatProgressBarModule,
   ],
   exports: [],
   providers: [],
