@@ -94,6 +94,18 @@ mat-stepper {
   opacity: 0.8!important;
 }
 
-.mat-radio-button {
-  margin-left: 15px;
+.ticket-wrapper {
+  .ticket {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+
 }
+
+.mat-horizontal-content-container, .mat-horizontal-stepper-content {
+  height: 100vh;
+  padding: 0 !important;
+}
+

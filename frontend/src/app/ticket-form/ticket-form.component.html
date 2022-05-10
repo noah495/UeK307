@@ -73,9 +73,10 @@
   <mat-step>
     <ng-template matStepLabel> Ticket Preview</ng-template>
     <h1 style="text-align: center">Ticket Preview</h1>
-    <app-ticket *ngFor="let ticket of ticketDraft" [ticket]="ticket">
-    </app-ticket>
-
+    <div class="ticket-wrapper">
+      <app-ticket *ngFor="let ticket of ticketDraft" [ticket]="ticket" class="ticket">
+      </app-ticket>
+    </div>
     <!-- TODO: push to db on button click plus ticket text not showing -->
     <div class="buttons">
       <button mat-raised-button style="background-color: #ff3b3b; margin-right: 20px; width: 40%" matStepperPrevious>
@@ -86,5 +87,3 @@
     </div>
   </mat-step>
 </mat-stepper>
-
-
