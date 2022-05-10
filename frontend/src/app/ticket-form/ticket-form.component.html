@@ -1,7 +1,7 @@
 <mat-stepper>
   <mat-step>
     <ng-template matStepLabel> Create Ticket</ng-template>
-
+    <h1 style="text-align: center">Create Ticket</h1>
     <div class="form-wrapper">
       <p>
         <mat-form-field appearance="outline">
@@ -71,8 +71,8 @@
     </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel> Create Ticket</ng-template>
-    <h1 style="text-align: center">Preview</h1>
+    <ng-template matStepLabel> Ticket Preview</ng-template>
+    <h1 style="text-align: center">Ticket Preview</h1>
     <app-ticket *ngFor="let ticket of ticketDraft" [ticket]="ticket">
     </app-ticket>
 
