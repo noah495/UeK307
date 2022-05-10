@@ -136,3 +136,10 @@ mat-stepper {
   white-space: pre-wrap;
 }
 
+.mat-horizontal-stepper-header {
+  pointer-events: none;
+}
+
+.mat-stepper-horizontal-line {
+  border-top-color: rgba(255, 255, 255, .5);
+}
