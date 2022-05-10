@@ -8,6 +8,8 @@ import {Ticket} from "../models/ticket.model";
 })
 export class TicketComponent implements OnInit {
 
+  isEditing: boolean = false;
+
 @Input('ticket') ticket: Ticket | null = null;
 
   constructor() { }
