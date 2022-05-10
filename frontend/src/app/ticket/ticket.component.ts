@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Ticket} from "../models/ticket.model";
 import {ConcertService} from "../serivces/concert.service";
+import {TicketService} from "../serivces/ticket.service";
 
 @Component({
   selector: 'app-ticket',
@@ -15,7 +16,7 @@ export class TicketComponent implements OnInit {
   @Input('ticket') ticket: Ticket | null = null;
   ticketUpdated: Ticket = Object.assign({}, this.ticket);
 
-  constructor(private concertService: ConcertService) {
+  constructor(private concertService: ConcertService, private ticketService: TicketService) {
   }
 
   ngOnInit() {
@@ -34,8 +35,7 @@ export class TicketComponent implements OnInit {
     console.log(this.ticketUpdated);
   }
 
-  updateNewStatus(event: Event) {
-    console.log((event.target as HTMLSelectElement));
-    this.ticketUpdated.status = ((event.target as HTMLSelectElement).value as 'pending' | 'late' | 'paid');
+  updateTicket() {
+    this.ticketService.updateTicket()
   }
 }

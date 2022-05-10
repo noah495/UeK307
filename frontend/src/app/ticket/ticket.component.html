@@ -11,11 +11,11 @@
         </p>
         <div class="time-left-edit icon icon-editing" *ngIf="isEditing">
           <mat-label class="state-label">State</mat-label>
-          <select required class="state-select" [value]="ticketUpdated.status">
-            <option value="paid" (select)="updateNewStatus($event)">paid</option>
-            <option value="pending" (select)="updateNewStatus($event)">pending</option>
-            <option value="late" (select)="updateNewStatus($event)">late</option>
-          </select>
+          <mat-select required class="state-select" [(value)]="ticketUpdated.status">
+            <mat-option value="paid">paid</mat-option>
+            <mat-option value="pending">pending</mat-option>
+            <mat-option value="late">late</mat-option>
+          </mat-select>
         </div>
 
       </div>
