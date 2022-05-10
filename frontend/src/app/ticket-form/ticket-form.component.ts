@@ -11,20 +11,21 @@ import {MatStepper} from "@angular/material/stepper";
   styleUrls: ['./ticket-form.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class TicketFormComponent implements OnInit {
+export class TicketFormComponent {
   public firstName: string = '';
   public lastName: string = '';
-  public choice: number = 0;
+  public choice: string = '1';
   public chosenConcert: Concert = null;
   public phoneNr: string = '';
   public email: string = '';
-  public bonus: number = 0
+  public bonus: string = '0'
   public concerts: Concert[] = null;
   public errors: string[] = [];
 
   constructor(private ticketService: TicketService, private concertService: ConcertService) {
     this.concertService.fetchAllConcerts().then(res => {
-      this.concerts = res as Concert[];
+      this.concerts = res;
+      this.assignChosenConcert();
     })
   }
 
@@ -40,27 +41,24 @@ export class TicketFormComponent implements OnInit {
     }).then(res => {
       if (typeof res === 'boolean') stepper.next();
       else this.errors = res;
+      console.log(res);
     })
   }
 
   private calculateTimeToPay() {
-    switch (this.bonus) {
-      case 0:
-        return 30;
+    switch (Number(this.bonus)) {
       case 5:
         return 20;
       case 10:
         return 15;
       case 15:
         return 10;
+      default:
+        return 30;
     }
-    return 30;
-  }
-
-  ngOnInit(): void {
   }
 
   assignChosenConcert() {
-    this.chosenConcert = this.choice === 0 ? null : this.concerts.find(concert => concert.id === Number(this.choice));
+    this.chosenConcert = Number(this.choice) === 0 ? null : this.concerts.find(concert => concert.id === Number(this.choice));
   }
 }
