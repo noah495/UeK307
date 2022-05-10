@@ -70,9 +70,11 @@ export class TicketFormComponent {
   }
 
   private showErrorSnackbar(errors: string[]) {
-    errors.forEach(error => this.snackBar.open(error, '', {
-      duration: 2000,
-      panelClass: ['error-snackbar'],
-    }));
+    let errorString: string = '';
+    errors.forEach(err => errorString += err + '\n')
+    this.snackBar.open(errorString, '' ,{
+      duration: 200000,
+      panelClass: ['error-snackbar']
+    });
   }
 }

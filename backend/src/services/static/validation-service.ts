@@ -9,7 +9,7 @@ export class ValidationService {
         if (!this.validateStringNotEmpty(ticket.lastName)) errors.push(getEmptyFieldMessage('Last Name'));
         if (!this.validateStringNotEmpty(ticket.email)) errors.push(getEmptyFieldMessage('Email'));
         if (!this.validateStringNotEmpty(ticket.status)) errors.push(getEmptyFieldMessage('Status'));
-        if (!this.validateEmail(ticket.email)) errors.push(errorMessages.emailInvalid);
+        if (this.validateStringNotEmpty(ticket.email) && !this.validateEmail(ticket.email)) errors.push(errorMessages.emailInvalid);
         if (ticket.phoneNr) {
             if (!this.validatePhoneNumber(ticket.phoneNr)) errors.push(errorMessages.phoneInvalid)
         }
