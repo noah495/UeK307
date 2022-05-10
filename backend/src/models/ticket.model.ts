@@ -2,7 +2,7 @@ export interface Ticket {
     firstName: string;
     lastName: string;
     email: string;
-    phone: string;
+    phoneNr: string;
     concertId: number;
     status: string;
     timeLeft: string;

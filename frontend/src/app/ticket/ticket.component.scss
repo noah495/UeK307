@@ -14,7 +14,6 @@ mat-card {
 
 }
 
-
 .icon {
   font-size: 26px;
   margin: 8px 14px 14px 0;
@@ -59,5 +58,20 @@ mat-card {
       width: 80%;
       max-width: 100px;
     }
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+
+  &__discard {
+    background-color: #ff3b3b;
+    margin-right: 20px;
+  }
+
+  &__save {
+    background-color: forestgreen;
   }
 }
