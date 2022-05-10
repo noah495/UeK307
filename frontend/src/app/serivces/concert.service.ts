@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 
 @Injectable({providedIn: "root"})
 export class ConcertService {
-  private baseUrl: string = "http://css-appli20.com:3000"
+  private baseUrl: string = "http://127.0.0.1:3000"
 
   constructor(private http: HttpClient) {
   }
