@@ -10,7 +10,7 @@ import {TicketService} from "../serivces/ticket.service";
 export class OverviewComponent implements OnInit {
   public tickets: Ticket[] = [];
   constructor(public ticketService: TicketService) {
-    this.fetchTickets().then(r => console.log(this.tickets))
+    this.fetchTickets();
   }
 
   private async fetchTickets(): Promise<void> {

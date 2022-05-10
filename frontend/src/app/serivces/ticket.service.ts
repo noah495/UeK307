@@ -5,7 +5,7 @@ import {Ticket} from "../models/ticket.model";
 @Injectable({providedIn: "root"})
 export class TicketService {
 
-  baseUrl: string = "http://css-appli.com:3000/"
+  baseUrl: string = "http://css-appli20.com:3000/"
 
   constructor(private http: HttpClient) {
   }
