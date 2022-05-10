@@ -27,6 +27,12 @@ export class TicketsController {
 
     @Post('update/:id')
     public async updateTicket(@Param('id') id, @Body() body, @Res() res) {
-        res.send(await this.ticketsService.updateTicket(body, id))
+        const errors: string[] = ValidationService.validateTicket(body);
+        if (errors.length > 0) {
+            res.status(HttpStatus.BAD_REQUEST);
+            res.send({errors: errors})
+        } else {
+            res.send(await this.ticketsService.updateTicket(body, id));
+        }
     }
 }

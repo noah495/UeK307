@@ -1,5 +1,7 @@
 <div class="field">
   <p class="title text">{{title}}</p>
   <p class="value text" *ngIf="!isEditing">{{value}}</p>
-  <input type="text" value="{{value}}" *ngIf="isEditing">
+  <p *ngIf="isEditing">
+    <input matInput required type="text" value="{{value}}" >
+  </p>
 </div>

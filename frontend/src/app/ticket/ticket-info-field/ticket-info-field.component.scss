@@ -4,11 +4,11 @@
 
 .field {
   display: flex;
-  justify-content: space-between;
   width: 100%;
 
   .title {
     width: 60%;
+    max-width: 200px;
   }
 
   .value {
@@ -18,4 +18,45 @@
   .text {
     margin: 10px 0;
   }
+
+  .form-field {
+    width: 200px;
+  }
 }
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+mat-form-field {
+  width: 500px;
+}
+
+.mat-form-field-outline {
+  height: 60px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: white;
+}
+
+.mat-form-field-required-marker{
+  color: white !important;
+}
+
+.buttons {
+  width: 20%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.buttonCancel {
+  margin-right: 30px;
+}
+
+
+
