@@ -1,4 +1,5 @@
 export interface Ticket{
+   id: string;
    concertId: number;
    concertName: string;
    firstName: string;

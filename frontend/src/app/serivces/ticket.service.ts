@@ -27,4 +27,8 @@ export class TicketService {
       })
     })
   }
+
+  updateTicket(id: string) {
+    
+  }
 }

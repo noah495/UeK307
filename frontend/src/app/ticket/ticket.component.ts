@@ -36,6 +36,6 @@ export class TicketComponent implements OnInit {
   }
 
   updateTicket() {
-    this.ticketService.updateTicket()
+    this.ticketService.updateTicket(this.ticket.id)
   }
 }
