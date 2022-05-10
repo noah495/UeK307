@@ -17,6 +17,12 @@
         <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket.phoneNr}}"></app-ticket-info-field>
       </div>
       <div>
+        <button *ngIf="isEditing" mat-raised-button style="background-color: #ff3b3b; margin-right: 20px;" [routerLink]="'/'" (click)="isEditing = false">
+          Discard
+        </button>
+        <button *ngIf="isEditing" mat-raised-button style="background-color: forestgreen;">Save</button>
+      </div>
+      <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing">
           <mat-icon>edit</mat-icon>
         </button>
