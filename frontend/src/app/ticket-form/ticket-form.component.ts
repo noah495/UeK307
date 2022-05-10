@@ -4,6 +4,7 @@ import {TicketService} from "../serivces/ticket.service";
 import {Concert} from "../models/concert.model";
 import {ConcertService} from "../serivces/concert.service";
 import {MatStepper} from "@angular/material/stepper";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-ticket-form',
@@ -20,10 +21,9 @@ export class TicketFormComponent {
   public email: string = '';
   public bonus: string = '0'
   public concerts: Concert[] = null;
-  public errors: string[] = [];
   public ticket: Ticket = null;
 
-  constructor(private ticketService: TicketService, private concertService: ConcertService) {
+  constructor(private ticketService: TicketService, private concertService: ConcertService, private snackBar: MatSnackBar) {
     this.concertService.fetchAllConcerts().then(res => {
       this.concerts = res;
       this.assignChosenConcert();
@@ -45,8 +45,9 @@ export class TicketFormComponent {
           this.ticket = tickets.find(ticket => this.firstName === ticket.firstName && this.lastName === ticket.lastName && this.email === ticket.email);
           stepper.next();
         })
-        stepper.next()
-      } else this.errors = res;
+      } else {
+        this.showErrorSnackbar(res);
+      };
       console.log(res);
     })
   }
@@ -66,5 +67,12 @@ export class TicketFormComponent {
 
   public assignChosenConcert() {
     this.chosenConcert = Number(this.choice) === 0 ? null : this.concerts.find(concert => concert.id === Number(this.choice));
+  }
+
+  private showErrorSnackbar(errors: string[]) {
+    errors.forEach(error => this.snackBar.open(error, '', {
+      duration: 2000,
+      panelClass: ['error-snackbar'],
+    }));
   }
 }

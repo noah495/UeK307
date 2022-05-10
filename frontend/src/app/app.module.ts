@@ -19,6 +19,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatStepperModule} from "@angular/material/stepper";
 import {FormsModule} from "@angular/forms";
 import {TicketInfoFieldComponent} from "./ticket/ticket-info-field/ticket-info-field.component";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import {TicketInfoFieldComponent} from "./ticket/ticket-info-field/ticket-info-f
     FormsModule,
   ],
   exports: [],
-  providers: [],
+  providers: [MatSnackBar],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
