@@ -5,7 +5,6 @@ import {Concert} from "../models/concert.model";
 import {ConcertService} from "../serivces/concert.service";
 import {MatStepper} from "@angular/material/stepper";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {style} from "@angular/animations";
 
 @Component({
   selector: 'app-ticket-form',
