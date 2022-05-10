@@ -19,7 +19,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatStepperModule} from "@angular/material/stepper";
 import {FormsModule} from "@angular/forms";
 import {TicketInfoFieldComponent} from "./ticket/ticket-info-field/ticket-info-field.component";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {CustomHttpInterceptor} from "./interceptors/http-interceptor";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     TicketComponent,
     OverviewComponent,
     TicketFormComponent,
-    TicketInfoFieldComponent
+    TicketInfoFieldComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +48,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     MatFormFieldModule,
     MatStepperModule,
     FormsModule,
+    MatProgressBarModule,
+    MatSnackBarModule,
   ],
   exports: [],
-  providers: [MatSnackBar],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

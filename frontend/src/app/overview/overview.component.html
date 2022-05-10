@@ -1,14 +1,18 @@
+<mat-progress-bar color="accent" mode="indeterminate" *ngIf="spinnerService.visibility | async"></mat-progress-bar>
+
 <div class="title-wrapper">
   <h1>Tickets</h1>
 </div>
+
 <div class="no-tickets-wrapper">
-  <div *ngIf="tickets.length === 0">
+  <div *ngIf="tickets.length === 0 && !spinnerService.isLoading">
     <p class="">There are no existing tickets.</p>
     <div class="create-button-wrapper">
       <button mat-raised-button [routerLink]="'/create'">Create Ticket</button>
     </div>
   </div>
 </div>
+
 <app-ticket *ngFor="let ticket of tickets" [ticket]="ticket">
 
 </app-ticket>
