@@ -27,11 +27,7 @@
           <p class="title text">Email</p>
           <p class="value text">{{ticket.email}}</p>
         </div>
-        <div class="content__info__field">
-          <p class="title text">Phone Nr.</p>
-          <p class="value text" *ngIf="!isEditing">{{ticket.phoneNr}}</p>
-          <input type="text" value="{{ticket.phoneNr}}" *ngIf="isEditing">
-        </div>
+        <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket.phoneNr}}"></app-ticket-info-field>
       </div>
       <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing">

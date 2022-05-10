@@ -1,0 +1,22 @@
+.title {
+  font-weight: bold;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .title {
+    width: 60%;
+  }
+
+  .value {
+    width: 40%;
+  }
+
+  .text {
+    margin: 10px 0;
+  }
+}
+

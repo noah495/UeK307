@@ -1,0 +1,5 @@
+<div class="field">
+  <p class="title text">{{title}}</p>
+  <p class="value text" *ngIf="!isEditing">{{value}}</p>
+  <input type="text" value="{{value}}" *ngIf="isEditing">
+</div>
