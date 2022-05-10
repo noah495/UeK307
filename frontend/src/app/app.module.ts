@@ -18,13 +18,15 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatStepperModule} from "@angular/material/stepper";
 import {FormsModule} from "@angular/forms";
+import {TicketInfoFieldComponent} from "./ticket/ticket-info-field/ticket-info-field.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TicketComponent,
     OverviewComponent,
-    TicketFormComponent
+    TicketFormComponent,
+    TicketInfoFieldComponent
   ],
   imports: [
     BrowserModule,

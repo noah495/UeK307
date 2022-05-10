@@ -1,4 +1,4 @@
- <mat-card>
+<mat-card>
   <div class="content">
     <div class="content__top-bar">
       <div class="content__title">
@@ -11,22 +11,9 @@
     </div>
     <div class="content__bottom-wrapper">
       <div class="content__info">
-        <div class="content__info__field">
-          <p class="title text">First name</p>
-          <p class="value text">{{ticket.firstName}}</p>
-        </div>
-        <div class="content__info__field">
-          <p class="title text">First name</p>
-          <p class="value text">{{ticket.firstName}}</p>
-        </div>
-        <div class="content__info__field">
-          <p class="title text">Last name</p>
-          <p class="value text">{{ticket.lastName}}</p>
-        </div>
-        <div class="content__info__field">
-          <p class="title text">Email</p>
-          <p class="value text">{{ticket.email}}</p>
-        </div>
+        <app-ticket-info-field [is-editing]="isEditing" title="First name" value="{{ticket.firstName}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="Last name." value="{{ticket.lastName}}"></app-ticket-info-field>
+        <app-ticket-info-field [is-editing]="isEditing" title="Email." value="{{ticket.email}}"></app-ticket-info-field>
         <app-ticket-info-field [is-editing]="isEditing" title="Phone Nr." value="{{ticket.phoneNr}}"></app-ticket-info-field>
       </div>
       <div>

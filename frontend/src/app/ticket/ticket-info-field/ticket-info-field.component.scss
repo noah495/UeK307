@@ -20,3 +20,86 @@
   }
 }
 
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+mat-form-field {
+  width: 500px;
+}
+
+
+
+.mat-form-field-outline {
+  height: 60px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: white;
+}
+
+.mat-form-field-required-marker{
+  color: white !important;
+}
+
+.buttons {
+  width: 20%;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.buttonCancel {
+  margin-right: 30px;
+}
+
+mat-label {
+  color: white;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}
+
+select {
+  height: 35px;
+  width: 210px;
+}
+
+.mat-select-panel {
+  max-height: 200px !important;
+}
+
+.mat-select-value .mat-select-arrow {
+  color: white;
+}
+
+.mat-select-arrow {
+  color: white;
+}
+
+.mat-step-label {
+  color: white !important;
+}
+
+.mat-select-min-line {
+  color: white !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #6b6b6b !important;
+}
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: white !important;
+}
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+  color: red!important;
+  opacity: 0.8!important;
+}
+
+.mat-radio-button {
+  margin-left: 15px;
+}
+
