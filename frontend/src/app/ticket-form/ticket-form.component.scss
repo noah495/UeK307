@@ -4,10 +4,10 @@
   align-items: center;
   flex-direction: column
 }
+
 mat-form-field {
   width: 500px;
 }
-
 
 
 .mat-form-field-outline {
@@ -18,7 +18,7 @@ mat-form-field {
   color: white;
 }
 
-.mat-form-field-required-marker{
+.mat-form-field-required-marker {
   color: white !important;
 }
 
@@ -83,15 +83,18 @@ mat-stepper {
 .mat-select-min-line {
   color: white !important;
 }
+
 .mat-form-field-appearance-outline .mat-form-field-outline {
   color: #6b6b6b !important;
 }
+
 .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
   color: white !important;
 }
-.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
-  color: red!important;
-  opacity: 0.8!important;
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: red !important;
+  opacity: 0.8 !important;
 }
 
 .ticket-wrapper {
@@ -101,7 +104,6 @@ mat-stepper {
     width: 100%;
     transform: translateY(-50%);
   }
-
 }
 
 .mat-horizontal-content-container, .mat-horizontal-stepper-content {
@@ -109,3 +111,16 @@ mat-stepper {
   padding: 0 !important;
 }
 
+.mat-form-field-flex {
+  align-items: center !important;
+
+  .mat-icon {
+    transform: translateY(-7px) !important;
+  }
+}
+
+.wrapper-select {
+  .mat-icon {
+    transform: translateY(-2px) !important;
+  }
+}
