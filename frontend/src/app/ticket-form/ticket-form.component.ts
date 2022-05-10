@@ -15,6 +15,7 @@ export class TicketFormComponent implements OnInit {
   concertName: string = '';
   phoneNr?: string = '';
   email: string = '';
+  bonus: number = 0
 
   public ticketDraft: Ticket[] = [{
     firstName: this.firstName,

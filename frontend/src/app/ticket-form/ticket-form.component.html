@@ -5,22 +5,23 @@
     <div class="form-wrapper">
       <div class="sameLine">
         <p>
-          <mat-form-field appearance="standard">
+          <mat-form-field appearance="outline">
             <mat-label>First Name</mat-label>
             <input matInput required [(ngModel)]="firstName">
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
         </p>
         <p>
-          <mat-form-field appearance="standard">
+          <mat-form-field appearance="outline">
             <mat-label>Last Name</mat-label>
             <input matInput required [(ngModel)]="lastName">
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
         </p>
+
       </div>
       <p>
-        <mat-form-field appearance="standard">
+        <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput required [(ngModel)]="email">
           <mat-icon matSuffix>email</mat-icon>
@@ -28,7 +29,7 @@
       </p>
       <!-- TODO: PhoneNr is required (fix!!) else throws error...? -->
       <p>
-        <mat-form-field appearance="standard">
+        <mat-form-field appearance="outline">
           <mat-label>Phone Nr.</mat-label>
           <input matInput required [(ngModel)]="phoneNr">
           <mat-icon matSuffix>phone</mat-icon>
@@ -36,9 +37,9 @@
       </p>
       <div class="sameLine">
         <p>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <mat-label [(ngModel)]="concertName">Concert</mat-label>
-            <mat-select>
+            <mat-select required>
               <mat-option value="concert1">Concert 1</mat-option>
               <mat-option value="concert2">Concert 2</mat-option>
               <mat-option value="concert3">Concert 3</mat-option>
@@ -51,13 +52,13 @@
           </mat-form-field>
         </p>
         <p>
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="outline">
             <mat-label>Bonus</mat-label>
-            <mat-select>
-              <mat-option value="Bonus0">0</mat-option>
-              <mat-option value="Bonus5">5</mat-option>
-              <mat-option value="Bonus10">10</mat-option>
-              <mat-option value="Bonus15">15</mat-option>
+            <mat-select [(ngModel)]="bonus" required>
+              <mat-option value="0">0</mat-option>
+              <mat-option value="5">5</mat-option>
+              <mat-option value="10">10</mat-option>
+              <mat-option value="15">15</mat-option>
             </mat-select>
             <mat-icon matSuffix>percent</mat-icon>
           </mat-form-field>
