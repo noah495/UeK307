@@ -1,52 +1,42 @@
-<mat-card>
- <mat-grid-list cols="6" [rowHeight]="40">
-    <mat-grid-tile colspan="1" rowspan="6">
-    </mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1">
-      {{ticket.concertName}}
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1" >
-      TIME LEFT
-    </mat-grid-tile>
-    <mat-grid-tile colspan="1" rowspan="1">
-      ⏳
-    </mat-grid-tile>
-   <mat-grid-tile colspan="1" rowspan="1">
-     FIRSTNAME:
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2" rowspan="1">
-     {{ticket.firstName}}
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2"></mat-grid-tile>
-   <mat-grid-tile colspan="1" rowspan="1">
-     LASTNAME:
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2" rowspan="1">
-     {{ticket.lastName}}
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2"></mat-grid-tile>
-
-   <mat-grid-tile colspan="1" rowspan="1">
-      EMAIL:
-  </mat-grid-tile>
-   <mat-grid-tile colspan="2" rowspan="1">
-     {{ticket.email}}
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2"></mat-grid-tile>
-   <mat-grid-tile colspan="1" rowspan="1">
-     PHONE NR.:
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2" rowspan="1">
-     {{ticket.phoneNr}}
-   </mat-grid-tile>
-   <mat-grid-tile colspan="2"></mat-grid-tile>
-   <mat-grid-tile colspan="1">
-     BONUS
-   </mat-grid-tile>
-   <mat-grid-tile colspan="1"></mat-grid-tile>
-   <mat-grid-tile colspan="2"></mat-grid-tile>
-   <mat-grid-tile colspan="1">
-     <mat-icon>edit</mat-icon>
-   </mat-grid-tile>
- </mat-grid-list>
+ <mat-card>
+  <div class="content">
+    <div class="content__top-bar">
+      <div class="content__title">
+        <p>CONCERT NAME</p>
+      </div>
+      <div class="content__time-left">
+        <p class="title">Time left</p>
+        <p class="icon">⏳</p>
+      </div>
+    </div>
+    <div class="content__bottom-wrapper">
+      <div class="content__info">
+        <div class="content__info__field">
+          <p class="title text">First name</p>
+          <p class="value text">{{ticket.firstName}}</p>
+        </div>
+        <div class="content__info__field">
+          <p class="title text">First name</p>
+          <p class="value text">{{ticket.firstName}}</p>
+        </div>
+        <div class="content__info__field">
+          <p class="title text">Last name</p>
+          <p class="value text">{{ticket.lastName}}</p>
+        </div>
+        <div class="content__info__field">
+          <p class="title text">Email</p>
+          <p class="value text">{{ticket.email}}</p>
+        </div>
+        <div class="content__info__field">
+          <p class="title text">Phone Nr.</p>
+          <p class="value text">{{ticket.phoneNr}}</p>
+        </div>
+      </div>
+      <div>
+        <button mat-button class="content__edit-button">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
 </mat-card>

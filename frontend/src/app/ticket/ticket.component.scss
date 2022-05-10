@@ -1,9 +1,82 @@
-mat-card{
+mat-card {
   margin: 50px 100px;
   background-image: url("~src/assets/ticketImg.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
   border: 5px solid #BFBFBF;
   color: white;
+  box-shadow: 4px 4px 4px #BFBFBF;
+
+  &:hover {
+    transform: scale(1.005);
+    transition: 200ms;
+  }
+
 }
 
+.title {
+  font-weight: bold;
+}
+
+.icon {
+  font-size: 26px;
+  margin: 8px 14px 14px 0
+}
+
+.content {
+  padding-left: 20%;
+
+  &__edit-button {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+  }
+
+  &__bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__top-bar {
+    width: 100%;
+    display: flex;
+  }
+
+  &__title {
+    width: 70%;
+  }
+
+  &__time-left {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+
+    .title {
+      margin: 16px 0;
+      padding-right: 10px;
+      padding-left: 40px;
+
+    }
+  }
+
+  &__info {
+    width: 60%;
+
+    &__field {
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        width: 60%;
+      }
+
+      .value {
+        width: 40%;
+      }
+
+      .text {
+        margin: 10px 0;
+      }
+    }
+  }
+}
