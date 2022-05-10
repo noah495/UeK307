@@ -5,7 +5,7 @@ import {TicketDto} from "../dto/ticket.dto";
 
 @Injectable({providedIn: "root"})
 export class TicketService {
-  private baseUrl: string = "http://127.0.0.1:3000"
+  private baseUrl: string = "http://css-appli20.com:3000"
 
   constructor(private http: HttpClient) {
   }
