@@ -12,9 +12,9 @@ function fillOutForm(firstName: string, lastname: string, email: string, bodySta
 }
 
 function createMockTicket() {
-  cy.intercept('GET', baseUrl + ':3000/tickets/all', {fixture:'mockTicket.json'})
+  cy.intercept('GET', baseUrl + ':3000/tickets/*', {fixture:'mockTicket.json'}).as('ticket')
 
-  cy.intercept('GET', baseUrl + ':3000/concerts/*', {body: {id: 1, artist: 'Kanye West'}})
+  cy.intercept('GET', baseUrl + ':3000/concerts/*', {body: {id: 1, artist: 'Kanye West'}}).as('concert')
 
 }
 
@@ -54,13 +54,6 @@ describe('BetterTiq Tests ', () => {
     cy.get('.error-snackbar').should('not.exist')
   })
 
-  it('When ticket-edit-button is pressed then show input boxes', () => {
-    createMockTicket()
-    cy.visit(baseUrl)
-    cy.get('mat-card').get('.content__edit-button').click()
-    cy.get('.edit-input').should('exist')
-  })
-
   it('When no tickets existing then show no ticket existing', () => {
     cy.intercept('GET', baseUrl + ':3000/tickets/all', {body: {}})
     cy.visit(baseUrl)
@@ -73,23 +66,31 @@ describe('BetterTiq Tests ', () => {
     cy.get('.mat-card').should('have.length', 1)
   })
 
+  it('When ticket-edit-button is pressed then show input boxes', () => {
+    createMockTicket()
+    cy.visit(baseUrl)
+    cy.get('mat-card').get('.content__edit-button').click()
+    cy.get('.mat-select').first().click()
+    cy.get('.edit-input').should('exist')
+  })
+
   it('When ticket changes are discarded then dont apply changes', () => {
     createMockTicket()
     cy.visit(baseUrl)
     cy.get('mat-card').get('.content__edit-button').click()
+    cy.get('.mat-select').first().click()
     cy.get('.edit-input').first().type('editedOption')
     cy.get('.buttons__discard').click()
   })
-
-  it('When ticket changes are saved then apply changes', () => {
+// changes won't be applied since the ticket data is mocked inside fixtures/mockTicket.json
+  it('When input entered in input box then it should edit ticket and clicks save', () => {
     createMockTicket()
     cy.visit(baseUrl)
     cy.get('mat-card').get('.content__edit-button').click()
+    cy.get('.mat-select').first().click()
     cy.get('.edit-input').first().type('editedOption')
     cy.get('.buttons__save').click()
   })
-
-
 })
 
 
