@@ -17,7 +17,7 @@ export class SnackbarService {
 
   private open(errorString: string) {
     this.snackbar.open(errorString, '' ,{
-      duration: 2000,
+      duration: 4000,
       panelClass: ['error-snackbar']
     });
   }
