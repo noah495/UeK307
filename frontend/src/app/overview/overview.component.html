@@ -12,12 +12,8 @@
     </div>
   </div>
 </div>
-
 <div *ngFor="let ticket of tickets">
-  <app-ticket *ngIf="ticket.status === 'late'" [ticket]="ticket"></app-ticket>
-</div>
-<div *ngFor="let ticket of tickets">
-  <app-ticket *ngIf="ticket.status === 'pending'" [ticket]="ticket"></app-ticket>
+  <app-ticket *ngIf="ticket.status !== 'paid'" [ticket]="ticket"></app-ticket>
 </div>
 
 <button class="addButton" [routerLink]="'/create'" mat-fab>

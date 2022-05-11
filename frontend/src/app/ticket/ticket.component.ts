@@ -57,4 +57,11 @@ export class TicketComponent implements OnInit {
       }
     })
   }
+
+  checkIfLate(ticket: Ticket) {
+    const today = Date.now();
+    const date = new Date(Date.parse(ticket.purchaseDate));
+    date.setDate(date.getDate() + ticket.timeLeft);
+    return date.getTime() < today;
+  }
 }

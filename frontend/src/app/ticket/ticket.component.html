@@ -12,15 +12,14 @@
       </div>
       <div class="content__time-left">
         <p class="icon" *ngIf="!isEditing">
-          <span *ngIf="ticket && ticket.status === 'pending'">⏳</span>
-          <span *ngIf="ticket && ticket.status === 'late'">⌛</span>
+          <span *ngIf="ticket && !checkIfLate(ticket)">⏳</span>
+          <span *ngIf="ticket && checkIfLate(ticket)">⌛</span>
         </p>
         <div class="time-left-edit icon icon-editing" *ngIf="isEditing">
           <mat-label class="state-label">State</mat-label>
           <mat-select required class="state-select" [(value)]="ticketUpdated.status">
             <mat-option value="paid">paid</mat-option>
             <mat-option value="pending">pending</mat-option>
-            <mat-option value="late">late</mat-option>
           </mat-select>
         </div>
 
