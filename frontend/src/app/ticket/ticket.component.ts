@@ -50,6 +50,7 @@ export class TicketComponent implements OnInit {
         this.ticketService.fetchTickets().then(tickets => {
           this.ticket = tickets.find(ticket => ticket.id === this.ticket.id);
           this.setConcertName(this.ticket.concertId);
+          if (document.location.href.includes('/overview')) document.location.reload();
         });
       } else {
         this.snackbarService.showErrorSnackbar(res);

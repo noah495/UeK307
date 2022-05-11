@@ -7,4 +7,5 @@ export interface Ticket{
    email: string;
    phoneNr: string;
    status: "paid" | "pending" | "late";
+   purchaseDate: string;
 }

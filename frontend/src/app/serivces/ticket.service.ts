@@ -13,7 +13,9 @@ export class TicketService {
   fetchTickets() {
      return new Promise<Ticket[]>(resolve => {
       this.http.get(`${this.baseUrl}/tickets/all`).subscribe( response => {
-        resolve(response as Ticket[])
+        resolve((response as Ticket[]).sort((a, b) => {
+          return new Date(b.purchaseDate) - new Date(a.purchaseDate);
+        }))
       })
     })
   }
