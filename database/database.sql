@@ -59,7 +59,7 @@ CREATE TABLE `sales` (
   PRIMARY KEY (`id`),
   KEY `concertId` (`concertId`),
   CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`concertId`) REFERENCES `concerts` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=127 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-INSERT INTO `sales` VALUES (123,'Noah','Bux','noah@outlook.com','079 420 69 69',30,'pending',15,'2022-05-11 11:04:55'),(124,'Dawid','Kapka','kapkadawid6@gmail.com','+41 79 421 54 54',30,'pending',20,'2022-05-11 11:14:59'),(125,'Test','Test','test@test.com','+41 79 123 45 67',81,'pending',10,'2022-05-11 11:29:22');
+INSERT INTO `sales` VALUES (123,'Noah','Bux','noah@outlook.com','079 420 69 69',81,'pending',15,'2022-05-11 11:04:55'),(124,'Dawid','Kapka','your@mom.com','+41 79 421 54 54',30,'pending',20,'2022-05-11 11:14:59'),(125,'Test','Test','test@test.com','+41 79 123 45 67',81,'paid',10,'2022-05-11 11:29:22'),(127,'No','hellNo','shut@up.pls','234567876',3,'paid',15,'2022-05-11 11:43:50'),(128,'Test2','Test2','test@test.com','078 420 69 69',30,'paid',30,'2022-05-11 12:04:11'),(129,'test','test','test1@test1.ch','234567',4,'paid',30,'2022-05-11 12:18:19'),(130,'sdfasf','asfdasfd','BitteHilfMir@123.chh','124356',1,'paid',30,'2022-05-11 12:19:21'),(131,'Leonie','Roth','laeonie@bauer-ledig-sucht.ch','04113211234',4,'pending',15,'2022-05-11 12:24:35'),(132,'Erik','Benz','powershellLover@shell.sh','079 420 00 00',6,'pending',20,'2022-05-11 12:26:13'),(169,'Vritz ','Gempf','diplomierter-wirtschaftsinformatiker@arduino-bbzw.uri','041 349 79 99',38,'pending',30,'2022-05-11 12:29:17');
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-11 11:33:49
+-- Dump completed on 2022-05-11 12:30:18
