@@ -1,14 +1,17 @@
 # BetterTiq
 
-To start frontend, run 
+To install dependencies, run
 ```
     npm run install:all
+```
+
+To start frontend, run 
+```
     npm run start:fe
 ```
 
 To start backend, run
 ```
-    npm run install:all
     npm run start:be
 ```
 
