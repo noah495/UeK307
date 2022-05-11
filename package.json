@@ -6,7 +6,9 @@
   "scripts": {
     "start:fe": "cd frontend && npm run start",
     "start:be": "cd backend && npm run start",
-    "install:all": "cd frontend && npm install && cd ../backend && npm install"
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "cy:run": "cd frontend && npm run cy:run",
+    "cy:open": "cd frontend && npm run cy:open"
   },
   "repository": {
     "type": "git",

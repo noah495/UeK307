@@ -34,7 +34,7 @@
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Concert</mat-label>
-          <mat-select required [(value)]="choice" (selectionChange)="assignChosenConcert()">
+          <mat-select class="concertSelect" required [(value)]="choice" (selectionChange)="assignChosenConcert()">
             <mat-option *ngFor="let concert of concerts" value="{{concert.id}}">{{concert.artist}}</mat-option>
           </mat-select>
           <mat-icon matSuffix>festival</mat-icon>
