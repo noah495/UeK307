@@ -38,6 +38,7 @@ export class TicketComponent implements OnInit {
     this.concertService.getConcertById(concertId).then(concert => {
       this.concertName = concert.artist
       this.concertId = concert.id.toString();
+      console.log(this.concertId);
     });
   }
 
