@@ -2,7 +2,13 @@
   <div class="content">
     <div class="content__top-bar">
       <div class="content__title">
-        <p class="concert-title">{{concertName ? concertName : ''}}</p>
+        <p class="concert-title" *ngIf="!isEditing">{{concertName ? concertName : ''}}</p>
+        <div class="concert-edit" *ngIf="isEditing">
+          <mat-label class="concert-label">Concert</mat-label>
+          <mat-select class="concert-select" required [(value)]="concertId">
+            <mat-option *ngFor="let concert of concerts" value="{{concert.id}}">{{concert.artist}}</mat-option>
+          </mat-select>
+        </div>
       </div>
       <div class="content__time-left">
         <p class="icon" *ngIf="!isEditing">

@@ -93,3 +93,20 @@ mat-card {
 .state-select {
   padding: 6px;
 }
+
+.concert-select {
+  height: 20px;
+  padding: 10px;
+}
+
+.concert-label {
+  font-weight: bold;
+  padding-right: 30px;
+}
+
+mat-select {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 40% !important;
+}

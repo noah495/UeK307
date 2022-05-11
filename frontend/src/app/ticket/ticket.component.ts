@@ -3,6 +3,7 @@ import {Ticket} from "../models/ticket.model";
 import {ConcertService} from "../serivces/concert.service";
 import {TicketService} from "../serivces/ticket.service";
 import {SnackbarService} from "../serivces/snackbar.service";
+import {Concert} from "../models/concert.model";
 
 @Component({
   selector: 'app-ticket',
@@ -13,11 +14,14 @@ export class TicketComponent implements OnInit {
 
   public isEditing: boolean = false;
   public concertName = '';
+  public concertId: string = '';
+  public concerts: Concert[] = [];
 
   @Input('ticket') ticket: Ticket | null = null;
   ticketUpdated: Ticket = Object.assign({}, this.ticket);
 
   constructor(private concertService: ConcertService, private ticketService: TicketService, private snackbarService: SnackbarService) {
+    this.concertService.fetchAllConcerts().then(concerts => this.concerts = concerts);
   }
 
   ngOnInit() {
@@ -29,7 +33,10 @@ export class TicketComponent implements OnInit {
   }
 
   public setConcertName(concertId: number) {
-    this.concertService.getConcertById(concertId).then(concert => this.concertName = concert.artist);
+    this.concertService.getConcertById(concertId).then(concert => {
+      this.concertName = concert.artist
+      this.concertId = concert.id.toString();
+    });
   }
 
   public setUpdatedTicket(ticket: Ticket) {
@@ -37,10 +44,13 @@ export class TicketComponent implements OnInit {
   }
 
   updateTicket() {
-    this.ticketService.updateTicket(this.ticket.id, this.ticketUpdated).then(res => {
+    this.ticketService.updateTicket(this.ticket.id, {...this.ticketUpdated, concertId: Number(this.concertId)}).then(res => {
       if (typeof res === 'boolean') {
         this.isEditing = false;
-        this.ticketService.fetchTickets().then(tickets => this.ticket = tickets.find(ticket => ticket.id === this.ticket.id));
+        this.ticketService.fetchTickets().then(tickets => {
+          this.ticket = tickets.find(ticket => ticket.id === this.ticket.id);
+          this.setConcertName(this.ticket.concertId);
+        });
       } else {
         this.snackbarService.showErrorSnackbar(res);
       }
