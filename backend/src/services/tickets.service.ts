@@ -35,7 +35,7 @@ export class TicketsService {
     public updateTicket(ticket: Ticket, ticketId: number): Promise<boolean> {
         return new Promise<boolean>(resolve => {
             this.connection.query(
-                "UPDATE sales SET firstname = ?, lastname = ?, email = ?, phone = ?, concertId = ?, status = ? WHERE id = ?",
+                "UPDATE sales SET firstname = ?, lastname = ?, email = ?, phoneNr = ?, concertId = ?, status = ? WHERE id = ?",
                 [ticket.firstName, ticket.lastName, ticket.email, ticket.phoneNr, ticket.concertId, ticket.status, ticketId],
                 (err) => {
                     if (err) resolve(false);
