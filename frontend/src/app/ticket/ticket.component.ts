@@ -16,6 +16,7 @@ export class TicketComponent implements OnInit {
   public concertName = '';
   public concertId: string = '';
   public concerts: Concert[] = [];
+  public purchaseDate = '';
 
   @Input('ticket') ticket: Ticket | null = null;
   ticketUpdated: Ticket = Object.assign({}, this.ticket);
@@ -28,6 +29,7 @@ export class TicketComponent implements OnInit {
     if (this.ticket) {
       this.setConcertName(this.ticket.concertId);
       this.setUpdatedTicket(this.ticket);
+      this.purchaseDate = this.ticket.purchaseDate.substring(0, 10);
     }
 
   }

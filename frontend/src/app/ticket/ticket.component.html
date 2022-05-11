@@ -58,6 +58,14 @@
           (value)="ticketUpdated.phoneNr = $event"
           title="Phone Nr."
           value="{{ticket ? ticket.phoneNr : ''}}"></app-ticket-info-field>
+
+        <app-ticket-info-field
+          [is-editing]="false"
+          [required]="false"
+          [value]="ticket ? purchaseDate : ''"
+          (value)="purchaseDate = $event"
+          title="Purchase Date"
+          value="{{ticket ? purchaseDate : ''}}"></app-ticket-info-field>
       </div>
       <div>
         <button mat-button class="content__edit-button" (click)="isEditing = !isEditing" *ngIf="!isEditing">

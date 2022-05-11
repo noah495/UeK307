@@ -47,6 +47,7 @@ export class TicketFormComponent {
           this.ticket = tickets.find(ticket => this.firstName === ticket.firstName && this.lastName === ticket.lastName && this.email === ticket.email);
           ticketComponent.setConcertName(this.ticket.concertId);
           ticketComponent.setUpdatedTicket(this.ticket);
+          ticketComponent.purchaseDate = this.ticket.purchaseDate.substring(0, 10);
           stepper.next();
         })
       } else {
